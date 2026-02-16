@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMU de Paris - Bilan Médical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen bg-white p-4">
+        <div class="max-w-[1400px] mx-auto bg-white border-4 border-gray-800">
+            
+            <!-- En-tête -->
+            <div class="bg-red-600 text-white px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="no-print bg-red-700 hover:bg-red-800 p-2 rounded-lg transition-colors" title="Retour à l'accueil">
+                        ←
+                    </a>
+                    <h1 class="text-2xl font-bold tracking-wider">FICHE BILAN MÉDICAL SAMU DE PARIS</h1>
+                </div>
+                <div class="flex gap-2 no-print">
+                    <button onclick="window.print()" class="bg-white text-red-600 px-3 py-1 rounded font-semibold hover:bg-red-50 text-sm">
+                        🖨 Imprimer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <form>
+                <!-- Équipages + Info patient + Neurologique -->
+                <div class="grid grid-cols-12 border-b-2 border-gray-800">
+                    <!-- Équipages -->
+                    <div class="col-span-3 border-r-2 border-gray-800 p-2">
+                        <div class="bg-red-600 text-white text-center font-bold text-sm py-1 mb-2">ÉQUIPAGES</div>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex gap-1"><span class="font-semibold w-12">Nom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                            <div class="flex gap-1"><span class="font-semibold w-12">Sexe:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                            <div class="flex gap-1"><span class="font-semibold w-12">Nom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                            <div class="flex gap-1"><span class="font-semibold w-12">Prénom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                            <div class="flex gap-1"><span class="font-semibold w-12">Nom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                            <div class="flex gap-1"><span class="font-semibold w-12">Prénom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                            <div class="flex gap-1 items-center mt-2">
+                                <span class="font-semibold text-xs">GH départ:</span>
+                                <input type="text" class="w-8 border-b border-gray-400 px-1" />
+                                <span>H</span>
+                                <input type="text" class="w-8 border-b border-gray-400 px-1" />
+                            </div>
+                            <div class="flex gap-1 items-center"><span class="font-semibold text-xs">Véhicule:</span></div>
+                            <input type="text" class="w-full border-b border-gray-400 px-1" />
+                            <div class="flex gap-1 items-center">
+                                <span class="font-semibold text-xs">GH arrivée:</span>
+                                <input type="text" class="w-8 border-b border-gray-400 px-1" />
+                                <span>H</span>
+                                <input type="text" class="w-8 border-b border-gray-400 px-1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info patient + Neurologique -->
+                    <div class="col-span-9">
+                        <div class="grid grid-cols-2">
+                            <!-- Info patient -->
+                            <div class="border-r-2 border-gray-800 p-2">
+                                <div class="text-xs space-y-1">
+                                    <div class="flex gap-1"><span class="font-semibold w-16">Nom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                                    <div class="flex gap-1"><span class="font-semibold w-16">Prénom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                                    <div class="flex gap-1"><span class="font-semibold w-16">Nom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                                    <div class="flex gap-1"><span class="font-semibold w-16">Prénom:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                                    <div class="flex gap-1 items-center">
+                                        <span class="font-semibold">Sexe:</span>
+                                        <label class="flex items-center gap-1 ml-2"><input type="checkbox" class="w-3 h-3" /><span>M</span></label>
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>F</span></label>
+                                        <span class="font-semibold ml-2">Date naissance:</span>
+                                        <input type="text" class="flex-1 border-b border-gray-400 px-1" placeholder="__/__/____" />
+                                    </div>
+                                    <div class="flex gap-1"><span class="font-semibold">Adresse:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                                    <div class="flex gap-1">
+                                        <span class="font-semibold">CP:</span>
+                                        <input type="text" class="w-20 border-b border-gray-400 px-1" />
+                                        <span class="font-semibold ml-2">Ville:</span>
+                                        <input type="text" class="flex-1 border-b border-gray-400 px-1" />
+                                    </div>
+                                    <div class="flex gap-1">
+                                        <span class="font-semibold">N° Sécu:</span>
+                                        <input type="text" class="flex-1 border-b border-gray-400 px-1" />
+                                        <span class="font-semibold">Clé:</span>
+                                        <input type="text" class="w-8 border-b border-gray-400 px-1" />
+                                    </div>
+                                    <div class="flex gap-1"><span class="font-semibold">Mutuelle:</span><input type="text" class="flex-1 border-b border-gray-400 px-1" /></div>
+                                    <div class="flex gap-2 text-xs mt-1">
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Situation Publique</span></label>
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Lieu travail</span></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Neurologique -->
+                            <div class="bg-green-600 text-white p-2">
+                                <h3 class="font-bold text-center text-sm mb-2">NEUROLOGIQUE</h3>
+                                <div class="text-xs space-y-1">
+                                    <div class="flex gap-1 items-center flex-wrap">
+                                        <span class="font-semibold text-red-300">PCI</span>
+                                        <span>GH:</span><input type="text" class="w-8 bg-white text-black px-1" />
+                                        <span>H</span><input type="text" class="w-8 bg-white text-black px-1" />
+                                        <span>durée:</span><input type="text" class="w-8 bg-white text-black px-1" />
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>min</span></label>
+                                    </div>
+                                    <div class="flex gap-1 flex-wrap">
+                                        <span class="font-semibold text-red-300">PC5 intervalle libre:</span>
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Convulsions</span></label>
+                                    </div>
+                                    <div class="flex gap-1 flex-wrap">
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Nausées</span></label>
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Vomissements</span></label>
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Somnolence</span></label>
+                                    </div>
+                                    <div class="flex gap-1 items-center">
+                                        <span>EVA:</span><input type="text" class="w-8 bg-white text-black px-1" /><span>/10</span>
+                                    </div>
+                                    <div class="flex gap-1 flex-wrap">
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Déficit sensitiel</span></label>
+                                    </div>
+                                    <div class="flex gap-1 flex-wrap">
+                                        <span class="font-semibold">Pupilles:</span>
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Normales</span></label>
+                                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Réactives</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Circonstances -->
+                <div class="border-b-2 border-gray-800 p-2">
+                    <div class="bg-red-600 text-white font-bold text-xs px-2 py-1 mb-2 inline-block">CIRCONSTANCES</div>
+                    <div class="grid grid-cols-12 gap-2 text-xs">
+                        <div class="col-span-3 flex gap-2 flex-wrap">
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Domicile</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Cabinet médical</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Hôpital</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Public</span></label>
+                        </div>
+                        <div class="col-span-9">
+                            <div class="flex gap-1">
+                                <span class="font-semibold">Adresse intervention:</span>
+                                <input type="text" class="flex-1 border-b border-gray-400 px-1" />
+                            </div>
+                            <div class="flex gap-1 mt-1">
+                                <span class="font-semibold">Motif appel:</span>
+                                <input type="text" class="flex-1 border-b border-gray-400 px-1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Affections médicales + Respiratoire -->
+                <div class="grid grid-cols-2 border-b-2 border-gray-800">
+                    <!-- Affections médicales -->
+                    <div class="border-r-2 border-gray-800 p-2">
+                        <div class="grid grid-cols-4 gap-1 text-xs mb-2">
+                            <div>
+                                <div class="font-bold text-center bg-gray-200 py-1">AFFECTIONS MÉDICALES</div>
+                                <div class="space-y-0.5 mt-1">
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Cardiaque</span></label>
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>ODS</span></label>
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Chute</span></label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="font-bold text-center bg-gray-200 py-1">ACCIDENT DOMESTIQUE</div>
+                                <div class="space-y-0.5 mt-1">
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Neurologique</span></label>
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Métabolique</span></label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="font-bold text-center bg-gray-200 py-1">PRESSION</div>
+                                <div class="space-y-0.5 mt-1">
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Déshydratation</span></label>
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Traumatisme</span></label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="font-bold text-center bg-gray-200 py-1">CHOYSE</div>
+                                <div class="space-y-0.5 mt-1">
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Asthme</span></label>
+                                    <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Refus</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Respiratoire -->
+                    <div class="bg-blue-600 text-white p-2">
+                        <h3 class="font-bold text-center text-sm mb-2">RESPIRATOIRE</h3>
+                        <div class="text-xs space-y-1">
+                            <div class="flex gap-1 flex-wrap">
+                                <span class="font-semibold">Fréquence ventilatoire:</span>
+                                <input type="text" class="w-12 bg-white text-black px-1" />
+                                <span>/min</span>
+                                <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Régularité</span></label>
+                            </div>
+                            <div class="flex gap-1 flex-wrap">
+                                <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Dyspnéique</span></label>
+                                <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Encombrement</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cardiovasculaire -->
+                <div class="bg-red-600 text-white p-2 border-b-2 border-gray-800">
+                    <h3 class="font-bold text-center text-sm mb-2">CARDIOVASCULAIRE</h3>
+                    <div class="text-xs space-y-1">
+                        <div class="flex gap-1 flex-wrap">
+                            <span class="font-semibold">Fréquence cardiaque:</span>
+                            <input type="text" class="w-12 bg-white text-black px-1" />
+                            <span>/min</span>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Régulier</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Irrégulier</span></label>
+                        </div>
+                        <div class="flex gap-1 flex-wrap">
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Tachycardie</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Bradycardie</span></label>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                            <span class="font-semibold">Pose DSA GH:</span>
+                            <input type="text" class="w-8 bg-white text-black px-1" />
+                            <span>H</span>
+                            <input type="text" class="w-8 bg-white text-black px-1" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demande de renfort -->
+                <div class="p-2 border-b-2 border-gray-800">
+                    <div class="flex gap-2 items-center text-xs">
+                        <span class="font-bold">DEMANDE DE RENFORT</span>
+                        <span>GH:</span><input type="text" class="w-8 border-b border-gray-400 px-1" />
+                        <span>H</span><input type="text" class="w-8 border-b border-gray-400 px-1" />
+                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Renfort médical</span></label>
+                        <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>DUI</span></label>
+                    </div>
+                </div>
+
+                <!-- Lésions + Observations -->
+                <div class="grid grid-cols-2 border-b-2 border-gray-800">
+                    <!-- Lésions -->
+                    <div class="bg-red-600 text-white p-2 border-r-2 border-gray-800">
+                        <h3 class="font-bold text-center text-sm mb-2">LÉSIONS</h3>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="bg-white text-black p-2 rounded text-center text-xs">FACE</div>
+                            <div class="text-xs space-y-1">
+                                <div class="font-semibold">1 - HÉMORRAGIE</div>
+                                <div class="font-semibold">2 - LUXATION</div>
+                                <div class="font-semibold">3 - CONTUSION</div>
+                                <div class="font-semibold">4 - FRACTURE</div>
+                                <div class="font-semibold">5 - FRACTURE OUVERTE</div>
+                                <div class="font-semibold">6 - PLAIE</div>
+                                <div class="font-semibold">7 - DOULEUR</div>
+                                <div class="font-semibold">8 - BRÛLURE</div>
+                                <div class="font-semibold">9 - HÉMATOME</div>
+                                <div class="font-semibold">10 - MEMBRE SECTIONNÉ</div>
+                                <div class="font-semibold">11 - ÉSCARE</div>
+                            </div>
+                            <div class="bg-white text-black p-2 rounded text-center text-xs">DOS</div>
+                        </div>
+                        <div class="mt-2 space-y-1 text-xs">
+                            <div class="flex gap-1"><span class="font-semibold">INTOXICATION GH:</span><input type="text" class="w-8 bg-white text-black px-1" /><span>H</span><input type="text" class="w-8 bg-white text-black px-1" /></div>
+                            <div><span class="font-semibold">MÉDICAMENTS</span><input type="text" class="w-full bg-white text-black px-1 mt-1" /></div>
+                        </div>
+                    </div>
+
+                    <!-- Observations -->
+                    <div class="bg-blue-900 text-white p-2">
+                        <h3 class="font-bold text-center text-sm mb-2">OBSERVATIONS</h3>
+                        <textarea rows="20" class="w-full bg-white text-black p-2 rounded text-xs resize-none" placeholder="Observations..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Gestes effectués -->
+                <div class="bg-gray-400 p-2 border-b-2 border-gray-800">
+                    <h3 class="font-bold text-center text-sm mb-2">GESTES EFFECTUÉS</h3>
+                    <div class="grid grid-cols-2 gap-4 text-xs">
+                        <div class="flex gap-1 flex-wrap">
+                            <span class="font-semibold">Immobilisation:</span>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Pilier cervical</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Attelles</span></label>
+                        </div>
+                        <div class="flex gap-1 flex-wrap">
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>PLS</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Masque HC</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issue de l'intervention -->
+                <div class="bg-gray-400 p-2 border-b-2 border-gray-800">
+                    <h3 class="font-bold text-center text-sm mb-2">ISSUE DE L'INTERVENTION</h3>
+                    <div class="grid grid-cols-3 gap-4 text-xs">
+                        <div class="space-y-1">
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Transport</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Pas de transport</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>DCD</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>Refus de soins</span></label>
+                        </div>
+                        <div class="flex gap-1 flex-wrap">
+                            <span class="font-semibold">Destination:</span>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>CPRU</span></label>
+                            <label class="flex items-center gap-1"><input type="checkbox" class="w-3 h-3" /><span>CHU</span></label>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                            <span class="font-semibold">Arrivée hôpital GH:</span>
+                            <input type="text" class="w-8 border-b border-gray-400 px-1" />
+                            <span>H</span>
+                            <input type="text" class="w-8 border-b border-gray-400 px-1" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traitements / Antécédents / Allergies -->
+                <div class="grid grid-cols-3 bg-yellow-300 p-2">
+                    <div class="border-r-2 border-gray-800 pr-2">
+                        <div class="font-bold text-center text-sm mb-2">TRAITEMENTS EN COURS</div>
+                        <textarea rows="4" class="w-full border border-gray-400 p-1 text-xs resize-none"></textarea>
+                    </div>
+                    <div class="border-r-2 border-gray-800 px-2">
+                        <div class="font-bold text-center text-sm mb-2">ANTÉCÉDENTS</div>
+                        <textarea rows="4" class="w-full border border-gray-400 p-1 text-xs resize-none"></textarea>
+                    </div>
+                    <div class="pl-2">
+                        <div class="font-bold text-center text-sm mb-2">ALLERGIES</div>
+                        <textarea rows="4" class="w-full border border-gray-400 p-1 text-xs resize-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="p-2 text-center text-xs">
+                    <p class="text-gray-600">Service d'Aide Médicale Urgente - SAMU de Paris</p>
+                    <p class="mt-2 text-gray-500">FiveM Roleplay - Document fictif</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
